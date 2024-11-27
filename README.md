@@ -2,6 +2,17 @@
 
 Uses AI to try to figure out which properties were renamed in resources between two terraform schemas.
 
+## Export your Terraform Provider's JSON schema
+
+Run this command for each of the versions of the provider you want to inspect
+```
+# while in your terraform project directory, importing the old schema
+terraform providers schema -json > old_provider_schema.json
+
+# then update your provider dependency to the new one, and run again
+terraform providers schema -json > new_provider_schema.json
+```
+
 ## Run it
 
 ```
